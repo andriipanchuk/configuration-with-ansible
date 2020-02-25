@@ -1,17 +1,17 @@
- ---
- - name: Conditional Playbook
-   hosts: all
-   become: true
-   become_method: sudo
-   connection: ssh
-   ignore_errors: false
-   tasks:
-      ec2:
-        key_name: ansible
-        instance_type: "{{instance_type}}"
-        image: ami-0a887e401f7654935
-        count: 1
+---
+- name: Provisioning VPC with subnets
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  tasks:
+    tasks:
+       ec2:
+         key_name: ansible
+         instance_type: "{{instance_type}}"
+         image: ami-0a887e401f7654935
+         count: 1
         vpc_subnet_id: vpc-02e5bf78
-        assign_public_ip: yes
-        region: "{{region}}"
+         assign_public_ip: yes
+         region: "{{region}}"
       register: ec2
