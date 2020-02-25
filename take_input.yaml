@@ -7,10 +7,10 @@
   tasks:
    - ec2:
        key_name: ansible
-       instance_type: "{{instance_type}}"
+       instance_type: "{{ instance_type }}"
        image: ami-0a887e401f7654935 
        count: 1
-       vpc_subnet_id: vpc-02e5bf78
+       vpc_subnet_id: subnet-16434a71
        assign_public_ip: yes
-       region: "{{region}}"
+       region: "{{ region }}"
     register: ec2  
