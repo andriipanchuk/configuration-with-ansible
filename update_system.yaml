@@ -1,0 +1,6 @@
+---
+- hosts: web
+  tasks:
+   - name: Update System
+     yum: name=* state=latest
+    
