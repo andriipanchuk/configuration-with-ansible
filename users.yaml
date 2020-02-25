@@ -1,6 +1,5 @@
 ---
-
-- name: Playbook for Provisioning
+- name: Conditional Playbook
   hosts: all
   become: true
   become_method: sudo
@@ -10,8 +9,8 @@
      ec2:
        key_name: "{{key_name}}"
        instance_type: "{{instance_type}}"
-       image: CentOS 7 x64
+       image: ami-0a887e401f7654935
        count: 1
-       vpc_subnet_id: "{{vpc_subnet_id}}"
+       vpc_subnet_id: vpc-02e5bf78
        assign_public_ip: yes
        region: "{{region}}"
