@@ -1,0 +1,8 @@
+---
+- hosts: web
+  tasks:
+   - name: Download some files
+     get_url:
+        url:
+        dest: /tmp/
+        mode: 0755
