@@ -7,10 +7,11 @@
    ignore_errors: false
    tasks:
       ec2:
-        key_name: LaptopKey
+        key_name: ansible
         instance_type: "{{instance_type}}"
         image: ami-0a887e401f7654935
         count: 1
         vpc_subnet_id: vpc-02e5bf78
         assign_public_ip: yes
         region: "{{region}}"
+      register: ec2
