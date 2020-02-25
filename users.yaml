@@ -7,7 +7,7 @@
   ignore_errors: false
   tasks:
      ec2:
-       key_name: "{{key_name}}"
+       key_name: LaptopKey
        instance_type: "{{instance_type}}"
        image: ami-0a887e401f7654935
        count: 1
