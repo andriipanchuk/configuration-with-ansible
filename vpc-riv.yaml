@@ -3,15 +3,6 @@
   hosts: localhost
   gather_facts: no
   tasks:
-    - name: VPC
-      ec2_vpc_net_facts:
-        region: "{{region}}"
-        filters:
-          tag: Task VPC
-      register: VPC1
-
-
-
     - name: Create Private Subnet 1
       ec2_vpc_subnet:
         state: present
