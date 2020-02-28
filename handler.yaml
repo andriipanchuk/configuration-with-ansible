@@ -1,0 +1,35 @@
+---
+- name: Test Playbook
+  hosts: all
+  become: true
+  become_method: sudo
+  connection: ssh
+  ignore_errors: false
+  tasks:
+    - name: Handler tasks
+      package:
+        name: httpd
+        state: latest
+      notify: HTTPD RESTART
+    
+    
+    - name: Install mysql
+      package:
+        name: mariadb-server
+        state: present
+      notify: MYSQL RESTAR  
+
+
+
+
+  handlers:
+   - name: Restart apache
+     systemd:
+       name: httpd
+       state: restarted  
+
+
+    - name: Restart MYSQL
+      systemd:
+       name: mysql
+       state: restarted 
