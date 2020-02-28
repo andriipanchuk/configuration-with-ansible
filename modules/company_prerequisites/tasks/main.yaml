@@ -18,8 +18,7 @@
     state: stopped
   ignore_errors: true
    
-- name: Get Key
-  shell: r1soft-setup --get-key http://backup.cyber-pro.org/  
+
   
 
 
